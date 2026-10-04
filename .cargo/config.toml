@@ -1,0 +1,17 @@
+# 让 cargo 用 `git` 命令去取 git 依赖，而不是内置的 libgit2。
+#
+# 有三个 git 依赖：`vendor/iced-pomelo-gfx` 和它自己的兄弟仓库 `pomelo-gfx` 走 ssh，
+# `cosmic-text`（`[patch.crates-io.cosmic-text]`，带 `rev`）走 https —— 公开仓库，不需要凭据。
+# libgit2 自己那套 ssh 在这台机器上认证不上（它会去问 ssh-agent，而 agent 里没有能用的
+# key，也不会读 ~/.ssh/config 里的 Host/IdentityFile）。换成 git 命令行以后就是普通 git 的
+# 行为：ssh config、known_hosts、凭据全都照旧。
+#
+# 另外要知道，`[patch]` 是按**源**匹配的：即使根 Cargo.toml 已经把两个 ssh 源 patch 回
+# 本地的 submodule，cargo 仍然会去取一次那个仓库——它得先看见源里有哪些包，才能判断这份
+# patch 能不能用。所以「patch 回本地」省掉的是编译（编译的仍然是本地那份代码），省不掉
+# 这一次 fetch；没网或者没 key 的机器上，第一次解析会失败。
+#
+# `cosmic-text` 是同一件事的另一面：它没有本地 checkout 可以 patch 回去，那次 fetch 就是
+# 唯一的来源——所以引用里写的是 revision，取回来之后锁里记的也是那个 revision。
+[net]
+git-fetch-with-cli = true

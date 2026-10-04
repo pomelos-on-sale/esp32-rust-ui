@@ -1,0 +1,40 @@
+[submodule "iced"]
+	path = iced
+	url = git@github.com:pomelos-on-sale/iced.git
+	branch = pomelo/esp32s3
+[submodule "iced-pomelo-gfx"]
+	path = iced-pomelo-gfx
+	url = git@github.com:pomelos-on-sale/iced-pomelo-gfx.git
+	branch = main
+[submodule "iced-pomelo-winit"]
+	path = iced-pomelo-winit
+	url = git@github.com:pomelos-on-sale/iced-pomelo-winit.git
+	branch = main
+[submodule "pomelo-apps"]
+	path = pomelo-apps
+	url = git@github.com:pomelos-on-sale/pomelo-apps.git
+	branch = main
+[submodule "pomelo-font"]
+	path = pomelo-font
+	url = git@github.com:pomelos-on-sale/pomelo-font.git
+	branch = main
+[submodule "pomelo-gfx"]
+	path = pomelo-gfx
+	url = git@github.com:pomelos-on-sale/pomelo-gfx.git
+	branch = main
+[submodule "pomelo-hal"]
+	path = pomelo-hal
+	url = git@github.com:pomelos-on-sale/pomelo-hal.git
+	branch = main
+[submodule "pomelo-material-symbols"]
+	path = pomelo-material-symbols
+	url = git@github.com:pomelos-on-sale/pomelo-material-symbols.git
+	branch = main
+[submodule "pomelo-widgets"]
+	path = pomelo-widgets
+	url = git@github.com:pomelos-on-sale/pomelo-widgets.git
+	branch = main
+[submodule "pomelo-firmware"]
+	path = pomelo-firmware
+	url = git@github.com:pomelos-on-sale/pomelo-firmware.git
+	branch = main

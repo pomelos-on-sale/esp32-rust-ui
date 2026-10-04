@@ -1,0 +1,20 @@
+# Global OS & editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.log
+.cache/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Build artifacts
+target/
+build/
+
+
+# VSCode
+.vscode/

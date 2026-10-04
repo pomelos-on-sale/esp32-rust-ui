@@ -1,0 +1,7 @@
+# Python dependencies for tooling scripts (tools/)
+# Install with: pip install -r tools/requirements.txt
+
+Pillow>=10.0.0
+freetype-py>=2.5.0
+# `bake_glyphs.py` 用 fontTools 做子集（`pyftsubset`），用 freetype-py 光栅化。
+fonttools>=4.50.0
